@@ -2,6 +2,7 @@ import { NextResponse, NextRequest } from 'next/server'
 
 const checkIsAuthenticated = (req: NextRequest) => {
   const cookie = req.headers.get('cookie')
+  console.log('test')
   const cookieValue = cookie?.split('kibo_at=')[1]
   const decodedCookie = JSON.parse(atob(cookieValue as string))
   return decodedCookie?.userId
